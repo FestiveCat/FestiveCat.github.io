@@ -3,9 +3,9 @@
     to reference them, do var(varName)
 */
 :root { 
-    --sidebarWidth: 4.68vw;
-    --sidebarIconSize: 2.64vw;
-    --sidebarMargin: 1.04vw;
+    --sidebarWidth: max(4.68vw, 50px); /* 90px for 1920*/
+    --sidebarIconSize: max(2.64vw, 30px); /* 50px for 1920*/
+    --sidebarMargin: 1.02vw; /* 20px for 1920*/
     
     /* Colors */
     --colorMaroon: #1F0308;
@@ -19,7 +19,7 @@
 @font-face {
     font-family: RobotoCondensed;
     src: url(RobotoCondensed-Light.ttf);
-  }
+}
 
 body {
     background-color: var(--colorMaroon);
@@ -30,11 +30,10 @@ body {
     font-family: RobotoCondensed;
 }
 
-
+/** SIDEBAR **/
 .sidebar {
     height: 100%;
     width: var(--sidebarWidth);
-    min-width: 50px;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -45,44 +44,104 @@ body {
    
     font-size: 0.833vw;
 }
-
+/* SIDEBAR HEADER */
 .sidebarHeader {
     position: absolute;
     top: 0.925vh;
     align-items: center;
 }
 
+#logoImg {
+    position: absolute;
+}
+#logoImg:hover {
+    animation: rotate 1s;
+}
+@keyframes rotate {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
 .sidebarHeaderText {
-    margin: -0.78vw 0px 0px;
+    position: absolute;
+    margin: calc(-0.78vw + var(--sidebarIconSize)) 0px 0px;
     text-align: center;
     font-size: max(0.833vw, 9px);
 }
-#logoText {
-    margin: 0.78vw;
+
+#logoText:hover {
+    color: var(--colorLavender);
 }
+
 #jobTitle {
-    font-size: max(0.78vw, 8.5px);
+    font-size: max(0.8vw, 8.65px);
     color: var(--colorGrey);
-
+}
+#jobTitle:hover {
+    color: var(--colorLavender);
 }
 
-
+/* SIDEBAR MENU */
 div[class=sidebar] img[src*="images"] {
-    height: max(var(--sidebarIconSize), 30px);
+    height: var(--sidebarIconSize);
     margin-left: max(var(--sidebarMargin), 10px);
 }
 div[class=sidebarIcons] a {
     display:flex;
     margin-top: 1.38vh;
 }
-div[class=sidebarIcons] img[src^="images"]:hover {
+div[class=sidebarIcons] img[src*="images"]:hover {
     filter: brightness(0) saturate(100%) invert(56%) sepia(44%) saturate(607%) hue-rotate(158deg) brightness(92%) contrast(93%); 
+}
+
+div[class=sidebarIcons] a div.popUp {
+    display: none;
+    background: var(--colorSmokey);
+    color: var(--colorCream);
+    font-size: max(2.31vh, 10px);
+    height: max(3.25vh, 10px);
+    position: absolute;
+    left: var(--sidebarWidth);
+    margin-top: max(1.157vh, 8px);
+    white-space: nowrap;
+    width: auto;
+    padding-right: 0.5vw;
+    overflow-x: hidden;
+}
+
+div[class=sidebarIcons] a:hover div.popUp {
+    display: block;
+    animation: popUp 0.25s;
+}
+
+@keyframes popUp {
+    from {margin-left: -100px; opacity: 0%;}
+    to {margin-left: 0px; opacity: 100%;}
+}
+img[id=introIcon]:hover     {animation: shake 1s;}
+img[id=aboutIcon]:hover     {animation: shake 1s;}
+img[id=skillsIcon]:hover    {animation: rotate 1s;}
+img[id=projIcon]:hover      {animation: shake 1s;}
+img[id=contactIcon]:hover   {animation: shake 1s;}
+@keyframes shake {
+    0% {transform: rotate(0deg);}
+    10% {transform: rotate(10deg);}
+    20% {transform: rotate(0deg);}
+    30% {transform: rotate(-10deg);}
+    40% {transform: rotate(0deg);}
+    50% {transform: rotate(10deg);}
+    60% {transform: rotate(0deg);}
+    70% {transform: rotate(-10deg);}
+    80% {transform: rotate(0deg);}
+    90% {transform: rotate(10deg);}
+    100% {transform: rotate(0deg);}
 }
 
 .sidebarIcons {
     padding-top: 25.46vh;
 }
 
+/** MAIN CONTENT **/
 .splash {
     left: var(--sidebarWidth);
 }
@@ -96,11 +155,17 @@ div[class=splashTexts] > span {
     font-size: max(4.6vh, 10px);
     font-weight: 700;
 }
+div[class=splashTexts] > span:hover {
+    color: var(--colorLBlue);
+}
 div[class=splashTexts] > span[class=splashTextNewLine] {
     line-height: 300%;
 }
 div[class=splashTexts] > span[class=splashTextName] {
     font-size: max(9.2vh,20px);
+}
+div[class=splashTexts] > span[class=splashTextName]:hover {
+    color: var(--colorLavender);
 }
 
 .splashImage {
@@ -113,7 +178,7 @@ div[class=splashTexts] > span[class=splashTextName] {
 .contactMeButton {
     display: inline-block;
     padding: 0.78vw 2.31vh;
-    font-size: max(1.25vw, 10px);
+    font-size: max(0.85vw, 2.22vh, 10px);
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -123,14 +188,14 @@ div[class=splashTexts] > span[class=splashTextName] {
     border-radius: 15px;
     border-width: 0px;
     box-shadow: 0 0.83vh var(--colorGrey);
-  }
+}
   
-  .contactMeButton:hover {
-      background-color: #247DB1; /* CHANGE THIS IF --colorLBlue CHANGES TOO (minus #202020)*/
-    }
+.contactMeButton:hover {
+    background-color: #247DB1; /* CHANGE THIS IF --colorLBlue CHANGES TOO (minus #202020)*/
+}
   
-  .contactMeButton:active {
+.contactMeButton:active {
     background-color: var(--colorLavender);
     box-shadow: 0 0.46vh var(--colorGrey);
     transform: translateY(4px);
-  }
+}
