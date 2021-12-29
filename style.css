@@ -1,6 +1,52 @@
-@font-face { font-family: Delicious; src: url('Delicious-Roman.otf'); } 
-@font-face { font-family: Delicious; font-weight: bold; src: url('Delicious-Bold.otf');}
+/* 
+    Constant declarations ala typical programming languages
+    to reference them, do var(varName)
+*/
+:root { 
+    --sidebarWidth: 60px;
+    --sidebarIconSize: 50px;
+    --sidebarMargin: calc((var(--sidebarWidth) - var(--sidebarIconSize) )/ 2);
+    
+    /* Colors */
+    --colorMaroon: #1F0308;
+    --colorCream: #F4FFF8;
+    --colorSmokey: #191516;
+    --colorLBlue: #449DD1; /* filter: brightness(0) saturate(100%) invert(56%) sepia(44%) saturate(607%) hue-rotate(158deg) brightness(92%) contrast(93%); */
+    --colorLavender: #B084CC; /* filter: brightness(0) saturate(100%) invert(74%) sepia(81%) saturate(1982%) hue-rotate(209deg) brightness(85%) contrast(87%); */
+}
+
 body {
-    background-color:#1F0308;
-    color: #F4FFF8;
+    background-color: var(--colorMaroon);
+    color: var(--colorCream);
+    margin-left: var(--sidebarWidth);
+}
+
+.sidebar {
+    height: 100%;
+    width: var(--sidebarWidth);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    /* overflow-x: hidden; */
+    padding-top: 0px;
+    background: var(--colorSmokey);
+
+    display: flex;
+    align-items: center; 
+}
+
+.sidebarHeader {
+    position: absolute;
+    top: var(--sidebarMargin);
+    align-items: center;
+    
+}
+
+div[class=sidebarIcons] img[src^="images"] {
+    height: var(--sidebarIconSize);
+    margin-left: var(--sidebarMargin);
+}
+div[class=sidebarIcons] img[src^="images"]:hover {
+    filter: brightness(0) saturate(100%) invert(56%) sepia(44%) saturate(607%) hue-rotate(158deg) brightness(92%) contrast(93%); 
 }
