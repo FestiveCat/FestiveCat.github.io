@@ -3,9 +3,9 @@
     to reference them, do var(varName)
 */
 :root { 
-    --sidebarWidth: 90px;
-    --sidebarIconSize: 50px;
-    --sidebarMargin: calc((var(--sidebarWidth) - var(--sidebarIconSize) )/ 2);
+    --sidebarWidth: 4.68vw;
+    --sidebarIconSize: 2.64vw;
+    --sidebarMargin: 1.04vw;
     
     /* Colors */
     --colorMaroon: #1F0308;
@@ -24,7 +24,8 @@
 body {
     background-color: var(--colorMaroon);
     color: var(--colorCream);
-    margin-left: calc(var(--sidebarWidth) + 10px);
+    margin-left: min(calc(var(--sidebarWidth) + 0.5vw), 0px);
+    
 
     font-family: RobotoCondensed;
 }
@@ -33,6 +34,7 @@ body {
 .sidebar {
     height: 100%;
     width: var(--sidebarWidth);
+    min-width: 50px;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -40,42 +42,45 @@ body {
     /* overflow-x: hidden; */
     padding-top: 0px;
     background: var(--colorSmokey);
-
-    display: flex;
-    align-items: center; 
+   
+    font-size: 0.833vw;
 }
 
 .sidebarHeader {
     position: absolute;
-    top: 10px;
+    top: 0.925vh;
     align-items: center;
 }
 
 .sidebarHeaderText {
-    margin: -15px 0px 0px;
+    margin: -0.78vw 0px 0px;
     text-align: center;
-    font-size: auto;
+    font-size: max(0.833vw, 9px);
 }
 #logoText {
-    margin: 15px;
+    margin: 0.78vw;
 }
 #jobTitle {
-    font-size: 15px;
+    font-size: max(0.78vw, 8.5px);
     color: var(--colorGrey);
 
 }
 
 
 div[class=sidebar] img[src*="images"] {
-    height: var(--sidebarIconSize);
-    margin-left: var(--sidebarMargin);
+    height: max(var(--sidebarIconSize), 30px);
+    margin-left: max(var(--sidebarMargin), 10px);
 }
 div[class=sidebarIcons] a {
     display:flex;
-    margin-top: 15px;
+    margin-top: 1.38vh;
 }
 div[class=sidebarIcons] img[src^="images"]:hover {
     filter: brightness(0) saturate(100%) invert(56%) sepia(44%) saturate(607%) hue-rotate(158deg) brightness(92%) contrast(93%); 
+}
+
+.sidebarIcons {
+    padding-top: 25.46vh;
 }
 
 .splash {
@@ -85,22 +90,47 @@ div[class=sidebarIcons] img[src^="images"]:hover {
 .splashTexts {
     position: fixed;
     top: 20%;
-    left: 7.5%;
+    left: max(7.5%, 50px);
 }
 div[class=splashTexts] > span {
-    font-size: 50px;
+    font-size: max(4.6vh, 10px);
     font-weight: 700;
 }
 div[class=splashTexts] > span[class=splashTextNewLine] {
     line-height: 300%;
 }
 div[class=splashTexts] > span[class=splashTextName] {
-    font-size: 100px;
+    font-size: max(9.2vh,20px);
 }
 
 .splashImage {
     position: fixed;
     top: 15%;
     left: 60%;
-    height: 600px;
+    height: 55.55vh;
 }
+
+.contactMeButton {
+    display: inline-block;
+    padding: 0.78vw 2.31vh;
+    font-size: 1.25vw;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: var(--colorCream);
+    background-color: var(--colorLBlue);
+    border-radius: 15px;
+    border-width: 0px;
+    box-shadow: 0 0.83vh var(--colorGrey);
+  }
+  
+  .contactMeButton:hover {
+      background-color: #247DB1; /* CHANGE THIS IF --colorLBlue CHANGES TOO (minus #202020)*/
+    }
+  
+  .contactMeButton:active {
+    background-color: var(--colorLavender);
+    box-shadow: 0 0.46vh var(--colorGrey);
+    transform: translateY(4px);
+  }
