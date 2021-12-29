@@ -3,23 +3,32 @@
     to reference them, do var(varName)
 */
 :root { 
-    --sidebarWidth: 60px;
+    --sidebarWidth: 90px;
     --sidebarIconSize: 50px;
     --sidebarMargin: calc((var(--sidebarWidth) - var(--sidebarIconSize) )/ 2);
     
     /* Colors */
     --colorMaroon: #1F0308;
     --colorCream: #F4FFF8;
+    --colorGrey: #CFCFCF;
     --colorSmokey: #191516;
     --colorLBlue: #449DD1; /* filter: brightness(0) saturate(100%) invert(56%) sepia(44%) saturate(607%) hue-rotate(158deg) brightness(92%) contrast(93%); */
     --colorLavender: #B084CC; /* filter: brightness(0) saturate(100%) invert(74%) sepia(81%) saturate(1982%) hue-rotate(209deg) brightness(85%) contrast(87%); */
 }
 
+@font-face {
+    font-family: RobotoCondensed;
+    src: url(RobotoCondensed-Light.ttf);
+  }
+
 body {
     background-color: var(--colorMaroon);
     color: var(--colorCream);
-    margin-left: var(--sidebarWidth);
+    margin-left: calc(var(--sidebarWidth) + 10px);
+
+    font-family: RobotoCondensed;
 }
+
 
 .sidebar {
     height: 100%;
@@ -38,14 +47,32 @@ body {
 
 .sidebarHeader {
     position: absolute;
-    top: var(--sidebarMargin);
+    top: 10px;
     align-items: center;
-    
 }
 
-div[class=sidebarIcons] img[src^="images"] {
+.sidebarHeaderText {
+    margin: -15px 0px 0px;
+    text-align: center;
+    font-size: auto;
+}
+#logoText {
+    margin: 15px;
+}
+#jobTitle {
+    font-size: 15px;
+    color: var(--colorGrey);
+
+}
+
+
+div[class=sidebar] img[src*="images"] {
     height: var(--sidebarIconSize);
     margin-left: var(--sidebarMargin);
+}
+div[class=sidebarIcons] a {
+    display:flex;
+    margin-top: 15px;
 }
 div[class=sidebarIcons] img[src^="images"]:hover {
     filter: brightness(0) saturate(100%) invert(56%) sepia(44%) saturate(607%) hue-rotate(158deg) brightness(92%) contrast(93%); 
