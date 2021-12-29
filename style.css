@@ -198,4 +198,3 @@ div[class=splashTexts] > span[class=splashTextName]:hover {
     background-color: var(--colorLavender);
     box-shadow: 0 0.46vh var(--colorGrey);
     transform: translateY(4px);
-}
