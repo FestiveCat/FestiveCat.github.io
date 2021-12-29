@@ -55,13 +55,13 @@ body {
 .sidebarHeaderText {
     margin: -0.78vw 0px 0px;
     text-align: center;
-    font-size: max(0.833vw, 9px);
+    font-size: max(0.833vw, 8px);
 }
 #logoText {
     margin: 0.78vw;
 }
 #jobTitle {
-    font-size: max(0.78vw, 8.5px);
+    font-size: max(0.78vw, 6.5px);
     color: var(--colorGrey);
 
 }
