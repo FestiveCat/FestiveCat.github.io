@@ -77,3 +77,30 @@ div[class=sidebarIcons] a {
 div[class=sidebarIcons] img[src^="images"]:hover {
     filter: brightness(0) saturate(100%) invert(56%) sepia(44%) saturate(607%) hue-rotate(158deg) brightness(92%) contrast(93%); 
 }
+
+.splash {
+    left: var(--sidebarWidth);
+}
+
+.splashTexts {
+    position: fixed;
+    top: 20%;
+    left: 7.5%;
+}
+div[class=splashTexts] > span {
+    font-size: 50px;
+    font-weight: 700;
+}
+div[class=splashTexts] > span[class=splashTextNewLine] {
+    line-height: 300%;
+}
+div[class=splashTexts] > span[class=splashTextName] {
+    font-size: 100px;
+}
+
+.splashImage {
+    position: fixed;
+    top: 15%;
+    left: 60%;
+    height: 600px;
+}
