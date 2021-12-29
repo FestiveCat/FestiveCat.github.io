@@ -113,7 +113,7 @@ div[class=splashTexts] > span[class=splashTextName] {
 .contactMeButton {
     display: inline-block;
     padding: 0.78vw 2.31vh;
-    font-size: 1.25vw;
+    font-size: max(1.25vw, 10px);
     cursor: pointer;
     text-align: center;
     text-decoration: none;
