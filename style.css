@@ -3,9 +3,9 @@
     to reference them, do var(varName)
 */
 :root { 
-    --sidebarWidth: max(4.68vw, 50px); /* 90px for 1920*/
-    --sidebarIconSize: max(2.64vw, 30px); /* 50px for 1920*/
-    --sidebarMargin: 1.02vw; /* 20px for 1920*/
+    --sidebarWidth: max(5vw, 50px);
+    --sidebarIconSize: max(2.75vw, 30px);
+    --sidebarMargin: 1vw;
     
     /* Colors */
     --colorMaroon: #1F0308;
@@ -24,9 +24,6 @@
 body {
     background-color: var(--colorMaroon);
     color: var(--colorCream);
-    margin-left: calc(var(--sidebarWidth) + 0.5vw);
-    
-
     font-family: RobotoCondensed;
 }
 
@@ -34,27 +31,25 @@ body {
 .sidebar {
     height: 100%;
     width: var(--sidebarWidth);
-    position: fixed;
-    z-index: 1;
+    position: absolute;
     top: 0;
     left: 0;
-    /* overflow-x: hidden; */
-    padding-top: 0px;
     background: var(--colorSmokey);
-   
-    font-size: 0.833vw;
+    z-index: 1;
 }
 /* SIDEBAR HEADER */
 .sidebarHeader {
-    position: absolute;
-    top: 0.925vh;
-    align-items: center;
 }
 
-#logoImg {
-    position: absolute;
+.logoImg {
+    padding-top: 1vw;
 }
-#logoImg:hover {
+.logoImg img{
+    height: var(--sidebarIconSize);
+    display: block;
+    margin: auto;
+}
+.logoImg:hover img {
     animation: rotate 1s;
 }
 @keyframes rotate {
@@ -63,8 +58,6 @@ body {
 }
 
 .sidebarHeaderText {
-    position: absolute;
-    margin: calc(-0.78vw + var(--sidebarIconSize)) 0px 0px;
     text-align: center;
     font-size: max(0.833vw, 9px);
 }
@@ -74,7 +67,6 @@ body {
 }
 
 #jobTitle {
-    font-size: max(0.8vw, 8.65px);
     color: var(--colorGrey);
 }
 #jobTitle:hover {
@@ -82,39 +74,49 @@ body {
 }
 
 /* SIDEBAR MENU */
-div[class=sidebar] img[src*="images"] {
+div.sidebarMenu {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: inherit;
+    display: flex;            /* Make it flex */
+    flex-direction: column;   /* wrap children elements to columns */
+}
+div.sidebarMenu a {
+    display: flex;
+    align-items: center;
+}
+div.sidebarMenu a img {
     height: var(--sidebarIconSize);
-    margin-left: max(var(--sidebarMargin), 10px);
+    /* To center the image without making the image a block */
+    margin: 10px calc(calc(var(--sidebarWidth) - var(--sidebarIconSize)) / 2);
 }
-div[class=sidebarIcons] a {
-    display:flex;
-    margin-top: 1.38vh;
-}
-div[class=sidebarIcons] img[src*="images"]:hover {
+div.sidebarMenu img:hover { /* Highlight image to blue */
     filter: brightness(0) saturate(100%) invert(56%) sepia(44%) saturate(607%) hue-rotate(158deg) brightness(92%) contrast(93%); 
 }
 
-div[class=sidebarIcons] a div.popUp {
+div.sidebarMenu a .popUp {
     display: none;
     background: var(--colorSmokey);
     color: var(--colorCream);
-    font-size: max(2.31vh, 10px);
-    height: max(3.25vh, 10px);
+
+    height: calc(0.6 * var(--sidebarIconSize));
+    font-size: calc(0.5 * var(--sidebarIconSize));
+    white-space: nowrap;
+    overflow: hidden;
+
     position: absolute;
     left: var(--sidebarWidth);
-    margin-top: max(1.157vh, 8px);
-    white-space: nowrap;
+    padding-right: 0.5vw; /* To make the text not cut off so abruptly*/
     width: auto;
-    padding-right: 0.5vw;
-    overflow-x: hidden;
 }
 
-div[class=sidebarIcons] a:hover div.popUp {
+div.sidebarMenu a:hover .popUp {
     display: block;
-    animation: popUp 0.25s;
+    animation: slideInLeft 0.25s;
 }
 
-@keyframes popUp {
+@keyframes slideInLeft {
     from {margin-left: -100px; opacity: 0%;}
     to {margin-left: 0px; opacity: 100%;}
 }
@@ -123,6 +125,7 @@ img[id=aboutIcon]:hover     {animation: shake 1s;}
 img[id=skillsIcon]:hover    {animation: rotate 1s;}
 img[id=projIcon]:hover      {animation: shake 1s;}
 img[id=contactIcon]:hover   {animation: shake 1s;}
+
 @keyframes shake {
     0% {transform: rotate(0deg);}
     10% {transform: rotate(10deg);}
@@ -137,38 +140,37 @@ img[id=contactIcon]:hover   {animation: shake 1s;}
     100% {transform: rotate(0deg);}
 }
 
-.sidebarIcons {
-    padding-top: 25.46vh;
-}
-
 /** MAIN CONTENT **/
-.splash {
+div.main {
+    position: absolute;
+    top: 0;
     left: var(--sidebarWidth);
 }
 
+/* INDEX.HTML */
 .splashTexts {
     position: fixed;
-    top: 20%;
+    top: max(15%);
     left: max(7.5%, 50px);
 }
-div[class=splashTexts] > span {
+div.splashTexts > span {
     font-size: max(4.6vh, 10px);
     font-weight: 700;
 }
-div[class=splashTexts] > span:hover {
+div.splashTexts > span:hover {
     color: var(--colorLBlue);
 }
-div[class=splashTexts] > span[class=splashTextNewLine] {
+div.splashTexts > span.splashTextNewLine {
     line-height: 300%;
 }
-div[class=splashTexts] > span[class=splashTextName] {
+div.splashTexts > span.splashTextName {
     font-size: max(9.2vh,20px);
 }
-div[class=splashTexts] > span[class=splashTextName]:hover {
+div.splashTexts > span.splashTextName:hover {
     color: var(--colorLavender);
 }
 
-.splashImage {
+#splashImage {
     position: fixed;
     top: 15%;
     left: 60%;
@@ -199,3 +201,5 @@ div[class=splashTexts] > span[class=splashTextName]:hover {
     box-shadow: 0 0.46vh var(--colorGrey);
     transform: translateY(4px);
 }
+
+/* ABOUTME.HTML */
