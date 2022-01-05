@@ -38,18 +38,15 @@ body {
     z-index: 1;
 }
 /* SIDEBAR HEADER */
-.sidebarHeader {
-}
-
-.logoImg {
+.logo-img {
     padding-top: 1vw;
 }
-.logoImg img{
+.logo-img img{
     height: var(--sidebarIconSize);
     display: block;
     margin: auto;
 }
-.logoImg:hover img {
+.logo-img:hover img {
     animation: rotate 1s;
 }
 @keyframes rotate {
@@ -57,24 +54,25 @@ body {
     100% {transform: rotate(360deg);}
 }
 
-.sidebarHeaderText {
+.sidebar-header-text {
     text-align: center;
     font-size: max(0.833vw, 9px);
 }
 
-#logoText:hover {
+#logo-text:hover {
     color: var(--colorLavender);
 }
 
-#jobTitle {
+#job-title {
     color: var(--colorGrey);
+    font-size: max(0.833vw, 9px);
 }
-#jobTitle:hover {
+#job-title:hover {
     color: var(--colorLavender);
 }
 
 /* SIDEBAR MENU */
-div.sidebarMenu {
+div.sidebar-menu {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -82,20 +80,20 @@ div.sidebarMenu {
     display: flex;            /* Make it flex */
     flex-direction: column;   /* wrap children elements to columns */
 }
-div.sidebarMenu a {
+div.sidebar-menu a {
     display: flex;
     align-items: center;
 }
-div.sidebarMenu a img {
+div.sidebar-menu a img {
     height: var(--sidebarIconSize);
     /* To center the image without making the image a block */
     margin: 10px calc(calc(var(--sidebarWidth) - var(--sidebarIconSize)) / 2);
 }
-div.sidebarMenu img:hover { /* Highlight image to blue */
+div.sidebar-menu img:hover { /* Highlight image to blue */
     filter: brightness(0) saturate(100%) invert(56%) sepia(44%) saturate(607%) hue-rotate(158deg) brightness(92%) contrast(93%); 
 }
 
-div.sidebarMenu a .popUp {
+div.sidebar-menu a .pop-up {
     display: none;
     background: var(--colorSmokey);
     color: var(--colorCream);
@@ -111,7 +109,7 @@ div.sidebarMenu a .popUp {
     width: auto;
 }
 
-div.sidebarMenu a:hover .popUp {
+div.sidebar-menu a:hover .pop-up {
     display: block;
     animation: slideInLeft 0.25s;
 }
@@ -120,11 +118,11 @@ div.sidebarMenu a:hover .popUp {
     from {margin-left: -100px; opacity: 0%;}
     to {margin-left: 0px; opacity: 100%;}
 }
-img[id=introIcon]:hover     {animation: shake 1s;}
-img[id=aboutIcon]:hover     {animation: shake 1s;}
-img[id=skillsIcon]:hover    {animation: rotate 1s;}
-img[id=projIcon]:hover      {animation: shake 1s;}
-img[id=contactIcon]:hover   {animation: shake 1s;}
+img[id=intro-icon]:hover     {animation: shake 1s;}
+img[id=about-icon]:hover     {animation: shake 1s;}
+img[id=skills-icon]:hover    {animation: rotate 1s;}
+img[id=proj-icon]:hover      {animation: shake 1s;}
+img[id=contact-icon]:hover   {animation: shake 1s;}
 
 @keyframes shake {
     0% {transform: rotate(0deg);}
@@ -145,39 +143,50 @@ div.main {
     position: absolute;
     top: 0;
     left: var(--sidebarWidth);
+    height: 100%;
+    width: 95%;
+    /* background: #FFF; */
 }
 
 /* INDEX.HTML */
-.splashTexts {
+.splash-texts {
     position: fixed;
-    top: max(15%);
+    top: 20%;
     left: max(7.5%, 50px);
 }
-div.splashTexts > span {
-    font-size: max(4.6vh, 10px);
+@media (max-width: 400px) { /* small width screen compatability */
+    .splash-texts {
+        top: 15%;
+    }
+}
+
+div.splash-texts > span {
+    font-size: max(4vh, 10px);
     font-weight: 700;
 }
-div.splashTexts > span:hover {
+div.splash-texts > span:hover {
     color: var(--colorLBlue);
 }
-div.splashTexts > span.splashTextNewLine {
+div.splash-texts > span.splash-text-newline {
     line-height: 300%;
 }
-div.splashTexts > span.splashTextName {
-    font-size: max(9.2vh,20px);
+div.splash-texts > span.splash-text-name {
+    font-size: max(8vh, 20px);
 }
-div.splashTexts > span.splashTextName:hover {
+div.splash-texts > span.splash-text-name:hover {
     color: var(--colorLavender);
 }
 
-#splashImage {
+#splash-image {
+    display: block;
     position: fixed;
     top: 15%;
     left: 60%;
     height: 55.55vh;
 }
 
-.contactMeButton {
+
+.contact-me-button {
     display: inline-block;
     padding: 0.78vw 2.31vh;
     font-size: max(0.85vw, 2.22vh, 10px);
@@ -192,14 +201,88 @@ div.splashTexts > span.splashTextName:hover {
     box-shadow: 0 0.83vh var(--colorGrey);
 }
   
-.contactMeButton:hover {
+.contact-me-button:hover {
     background-color: #247DB1; /* CHANGE THIS IF --colorLBlue CHANGES TOO (minus #202020)*/
 }
   
-.contactMeButton:active {
+.contact-me-button:active {
     background-color: var(--colorLavender);
     box-shadow: 0 0.46vh var(--colorGrey);
     transform: translateY(4px);
 }
 
+/* FOR NON INDEX PAGES: */
+.content-header {
+    margin: 5% 0 0 2.5%;
+    max-width: 95%;
+    font-size: max(8vh);
+    font-weight: 700;
+    /* background: #FFF; */
+    color: var(--colorLBlue);
+}
+.content {
+    /* background: #B084CC; */
+    margin-left: 2.5%;
+    max-width: 95%;
+
+    font-size: max(2vh, 10px);
+    line-height: 150%;
+    font-family: sans-serif;
+    text-align: justify;
+}
+
 /* ABOUTME.HTML */
+#about-me-splash {
+    position: relative;
+    display: block;
+    float: right;
+    background: var(--colorSmokey);
+    width: 48%; 
+}
+
+#about-me-content {
+    background: var(--colorSmokey);
+    padding: 0.5%;
+    position: relative;
+    top: 20%;
+    width: 50%;
+}
+
+#timeline {
+    background: var(--colorSmokey);
+    width: 50%;
+    padding: 0.5%;
+}
+#timeline-details {
+    background: var(--colorSmokey);
+    width: 51%;
+    /* padding: 0.5%; */
+}
+
+#timeline-details-header {
+    border: solid #CFCFCF 2px;
+    padding: 0.5%;
+}
+
+#timeline-details-content {
+    border: solid #CFCFCF 2px;
+    padding: 0.5%;
+}
+@media (max-aspect-ratio: 5/3) { /* hide non-essential elements on tall screens */
+    #splash-image { /* index.html splash*/
+        display: none;
+    }
+    #about-me-splash { /* aboutMe.html splash*/
+        display: none;
+    }
+     /* The following are done this way to prevent !important overriding specificity in aboutMe.html*/
+    #about-me-content {
+        width: unset;
+    }
+    #timeline { 
+        width: unset;
+    }
+    #timeline-details {
+        width: unset;
+    }
+}
