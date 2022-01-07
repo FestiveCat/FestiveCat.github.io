@@ -31,7 +31,7 @@ body {
 .sidebar {
     height: 100%;
     width: var(--sidebarWidth);
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background: var(--colorSmokey);
@@ -58,14 +58,17 @@ body {
     text-align: center;
     font-size: max(0.833vw, 9px);
 }
-
+#logo-text {
+    transition: color ease-in-out 150ms 0ms;
+}
 #logo-text:hover {
     color: var(--colorLavender);
 }
 
 #job-title {
+    max-width: 95%;
     color: var(--colorGrey);
-    font-size: max(0.833vw, 9px);
+    transition: color ease-in-out 150ms 0ms;
 }
 #job-title:hover {
     color: var(--colorLavender);
@@ -144,7 +147,7 @@ div.main {
     top: 0;
     left: var(--sidebarWidth);
     height: 100%;
-    width: 95%;
+    width: 90%;
     /* background: #FFF; */
 }
 
@@ -163,6 +166,7 @@ div.main {
 div.splash-texts > span {
     font-size: max(4vh, 10px);
     font-weight: 700;
+    transition: color ease-in-out 150ms 0ms;
 }
 div.splash-texts > span:hover {
     color: var(--colorLBlue);
@@ -172,6 +176,7 @@ div.splash-texts > span.splash-text-newline {
 }
 div.splash-texts > span.splash-text-name {
     font-size: max(8vh, 20px);
+    transition: color ease-in-out 150ms 0ms;
 }
 div.splash-texts > span.splash-text-name:hover {
     color: var(--colorLavender);
@@ -199,6 +204,7 @@ div.splash-texts > span.splash-text-name:hover {
     border-radius: 15px;
     border-width: 0px;
     box-shadow: 0 0.83vh var(--colorGrey);
+    transition: background-color ease-in-out 150ms 0ms;
 }
   
 .contact-me-button:hover {
@@ -214,18 +220,25 @@ div.splash-texts > span.splash-text-name:hover {
 /* FOR NON INDEX PAGES: */
 .content-header {
     margin: 5% 0 0 2.5%;
-    max-width: 95%;
-    font-size: max(8vh);
+    width: auto;
+    font-size: 4.5em;
     font-weight: 700;
     /* background: #FFF; */
     color: var(--colorLBlue);
 }
+.content-header span {
+    transition: color ease-in-out 150ms 0ms;
+}
+.content-header span:hover {
+    color: var(--colorLavender);
+}
+
 .content {
     /* background: #B084CC; */
     margin-left: 2.5%;
     max-width: 95%;
 
-    font-size: max(2vh, 10px);
+    font-size: 1.2em;
     line-height: 150%;
     font-family: sans-serif;
     text-align: justify;
@@ -233,26 +246,58 @@ div.splash-texts > span.splash-text-name:hover {
 
 /* ABOUTME.HTML */
 #about-me-splash {
-    position: relative;
-    display: block;
+    position: fixed;
+    top: 15vh;
+    left: 52.5%;
+    display: flex;
     float: right;
-    background: var(--colorSmokey);
-    width: 48%; 
+    /* background: var(--colorSmokey); */
+    width: 45%; 
+    align-items: center;
+    justify-content: center;
+}
+#about-me-splash img {
+    border: var(--colorSmokey) 2px solid;
+    max-width: 100%;
+    max-height: 750px;
+    object-fit: cover;
 }
 
 #about-me-content {
     background: var(--colorSmokey);
-    padding: 0.5%;
+    padding: 0.1% 0.5%;
     position: relative;
     top: 20%;
     width: 50%;
+    border-radius: 25px;
+}
+#about-me-text-para {
+    letter-spacing: -0.25px;
 }
 
-#timeline {
+#timeline-obj-container {
     background: var(--colorSmokey);
     width: 50%;
-    padding: 0.5%;
+    height: 10vh;
+    padding: 0.25% 0.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+#timeline-obj {
+    height: 75%;
+    width: 200%;
+    background: #B084CC;
+    text-align: center;
+    text-justify: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+#timeline-obj:hover {
+    overflow-x: scroll;
+}
+
 #timeline-details {
     background: var(--colorSmokey);
     width: 51%;
@@ -261,12 +306,12 @@ div.splash-texts > span.splash-text-name:hover {
 
 #timeline-details-header {
     border: solid #CFCFCF 2px;
-    padding: 0.5%;
+    padding: 0.1% 0.5%;
 }
 
 #timeline-details-content {
     border: solid #CFCFCF 2px;
-    padding: 0.5%;
+    padding: 0.1% 0.5%;
 }
 @media (max-aspect-ratio: 5/3) { /* hide non-essential elements on tall screens */
     #splash-image { /* index.html splash*/
@@ -279,7 +324,7 @@ div.splash-texts > span.splash-text-name:hover {
     #about-me-content {
         width: unset;
     }
-    #timeline { 
+    #timeline-obj-container { 
         width: unset;
     }
     #timeline-details {
