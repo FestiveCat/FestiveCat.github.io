@@ -3,9 +3,9 @@
     to reference them, do var(varName)
 */
 :root { 
-    --sidebarWidth: max(5vw, 50px);
-    --sidebarIconSize: max(2.75vw, 30px);
-    --sidebarMargin: 1vw;
+    --sidebarWidth: max(5vmax, 50px);
+    --sidebarIconSize: max(2.75vmax, 30px);
+    --sidebarMargin: 1vmax;
     
     /* Colors */
     --colorMaroon: #1F0308;
@@ -72,7 +72,7 @@ body {
     background-color: var(--colorMaroon);
     color: var(--colorCream);
     font-family: RobotoCondensed;
-    font-size: max(0.8vw, 6px);
+    font-size: max(0.8vw, 8px);
 }
 
 /* ========== ========== ========== SIDEBAR ========== ========== ========== */
@@ -312,10 +312,7 @@ div.infobar {
 div.infobar-item {
     height: max(4vw, 50px);
     width: max(4vw, 50px);
-    margin-top: max(0.5vw, 5px);
-    margin-right: max(0.25vw, 2.5px);
-    margin-left: max(0.25vw, 2.5px);
-    margin-bottom: max(0.5vw, 5px);
+    margin: 5px;
     padding: max(0.2vw, 2.5px);
     border-radius: 15px;
 
@@ -324,12 +321,15 @@ div.infobar-item {
     justify-content: center;
 }
 div.infobar-item div.infobar-selected {
-    height: max(4.5vw, 55px);
-    width: max(4.5vw, 50px);
+    height: max(4vw, 50px);
+    width: max(4vw, 50px);
+    margin: 5px;
+    padding: max(0.2vw, 2.5px);
+    border-radius: 15px;
+
     background-image: radial-gradient(circle farthest-side at center,rgba(0,0,0, 0.1) 0%, rgba(176, 132, 204,0.5) 80% ,var(--colorLavender) 100%);
     position:absolute;
-    margin-top: -5px;
-    border-radius: 15px;
+    top: 0;
     pointer-events: none;
     display: none;
 }
@@ -416,8 +416,8 @@ div.infobar-item:hover div.infobar-selected {
 }
 
 div[id=skills-bar] div.infobar-item img {
-    max-width: max(4vw, 50px);
-    max-height: max(4vw, 50px);
+    height: max(4vw, 50px);
+    width: max(4vw, 50px);
 }
 
 div[id=skills-bar] div.infobar-item {
@@ -506,8 +506,8 @@ div[id=skills-bar] div.infobar-item {
 }
 
 div[id=projs-bar] div.infobar-item img {
-    max-width: max(4vw, 50px);
-    max-height: max(4vw, 50px);
+    height: max(4vw, 50px);
+    width: max(4vw, 50px);
     border-radius: 15px;
 }
 
@@ -659,13 +659,21 @@ div[id=projs-bar] div.infobar-item {
     background: rgb(5, 0, 49);
 }
 /* ========== ========== CONTACT.HTML ========== ==========*/
+#contact-me-text-container {
+    width: 95%;
+}
 #contact-me-text {
     letter-spacing: -0.25px;
     animation: slide-in-top 0.5s;
+    background: var(--colorSmokey);
+    border-radius: 20px;
+    padding: 10px;
+    text-align: justify;
+    width: calc(100% - 10px);
 }
 #form {
     height: 40vh;
-    /* background: #FFF; */
+    width: 95%;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 12.5% 12.5% 62.75% 12.5%;
@@ -696,7 +704,7 @@ div[id=projs-bar] div.infobar-item {
     background-color: rgb(39, 39, 39)
 }
 #socials {
-    height: 10vh;
+    height: 10vmin;
     width: 35%;
     background: var(--colorGrey);
     border-radius: 20px;
@@ -707,17 +715,16 @@ div[id=projs-bar] div.infobar-item {
     gap: 10px;
 }
 #socials img {
-    height: 3.7vh;
-    width: 3.7vh;
+    height: 3.7vmin;
+    width: 3.7vmin;
 }
 #socials a {
     display: inline-flex;
     align-content: center;
 }
 #socials div {
-    font-size: 1.7vh;
-    padding-left: 1vh;
-    padding-top: 1vh;
+    padding-left: 1vmin;
+    padding-top: 1vmin;
     /* background: #202020; */
 }
 
@@ -731,6 +738,12 @@ div[id=projs-bar] div.infobar-item {
     }
     .content-left-side {
         width: unset;
+    }
+    .infobar-container {
+        overflow-x: scroll;
+    }
+    .infobar-container:hover {
+        padding: 0px;
     }
     #skills-bar {
         display: flex;
