@@ -15,7 +15,7 @@ function java() { // face 1
     skillsDetailsHeader.textContent = "Java";
     skillsDetailsDesc.innerHTML = 
               "January 2021\r\n"
-            + "5,000\r\n"
+            + "6,000\r\n"
             + "Mainly school projects\r\n"
             + "Decent, know about Streams, Lambdas, Exceptions, MultiThreading, etc";
 }
@@ -48,7 +48,7 @@ function html5() { // face 3
     skillsDetailsHeader.textContent = "HTML 5";
     skillsDetailsDesc.innerHTML = 
               "December 2021\r\n"
-            + "1,000\r\n"
+            + "1,200\r\n"
             + "Mainly personal Projects\r\n"
             + "Decent";
 
@@ -61,7 +61,7 @@ function css3() { // face 4
     skillsDetailsHeader.textContent = "CSS 3";
     skillsDetailsDesc.innerHTML = 
               "December 2021\r\n"
-            + "1,000\r\n"
+            + "1,200\r\n"
             + "Mainly personal Projects\r\n"
             + "Decent, know about flex, grids, animations, transform etc";
 

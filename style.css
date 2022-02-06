@@ -1017,6 +1017,9 @@ div[id=projs-bar] div.infobar-item {
     #about-me-splash { /* aboutMe.html splash*/
         display: none;
     }
+    #about-me-splash-image {
+        display: none;
+    }
     .content-left-side {
         width: unset;
     }
