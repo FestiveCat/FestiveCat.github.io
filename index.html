@@ -11,6 +11,7 @@
     </head>
 
     <body>
+        <script src="scripts/index.js" defer></script>
         <div class="sidebar">
             <div class="sidebar-header">
                 <div class="logo-img">
@@ -68,7 +69,56 @@
                 <br>
                 <button onclick="location.href = 'htmls/contact.html';" class="contact-me-button">Contact Me!</button>
             </div>
-            <img src="images/HY2_highres.png" id="splash-image">
+            <div id="splash-3D">
+                <div class="splash-H">
+                    <div class="cuboid" id="H-left-bar">
+                        <div class="vertical-face"></div>
+                        <div class="vertical-face"></div>
+                        <div class="vertical-face"></div>
+                        <div class="vertical-face"></div>
+                        <div class="base-face"></div>
+                        <div class="base-face"></div>
+                    </div>
+                    <div class="cuboid" id="H-right-bar">
+                        <div class="vertical-face"></div>
+                        <div class="vertical-face"></div>
+                        <div class="vertical-face"></div>
+                        <div class="vertical-face"></div>
+                        <div class="base-face"></div>
+                        <div class="base-face"></div>
+                    </div>
+                    <div class="cuboid" id="H-mid-bar">
+                        <div class="vertical-face"></div>
+                        <div class="vertical-face"></div>
+                        <div class="vertical-face"></div>
+                        <div class="vertical-face"></div>
+                    </div>
+                </div>
+                <div class="splash-Y">
+                    <div class="cuboid" id="Y-mid-bar">
+                        <div class="vertical-face"></div>
+                        <div class="vertical-face"></div>
+                        <div class="vertical-face"></div>
+                        <div class="vertical-face"></div>
+                        <div class="base-face"></div>
+                    </div>
+                    <div class="skewed-cuboid" id="Y-left-slant">
+                        <div class="skewed-face"></div>
+                        <div class="skewed-face"></div>
+                        <div class="skewed-face"></div>
+                        <div class="skewed-face"></div>
+                        <div class="base-face"></div>
+                    </div>
+                    <div class="skewed-cuboid" id="Y-right-slant">
+                        <div class="skewed-face"></div>
+                        <div class="skewed-face"></div>
+                        <div class="skewed-face"></div>
+                        <div class="skewed-face"></div>
+                        <div class="base-face"></div>
+                    </div>
+
+                </div>
+            </div>
         </div>       
     </body>
 </html>

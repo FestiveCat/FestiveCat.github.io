@@ -1,35 +1,14 @@
-# Demo header
-
-## Subheader
-
-Description test 
-
-Additional Stuff
-
-`code line`
+# Ong Han Yang's Website!
+## Edit History:
 ```
-code block
-```
-*Italics*
-
-**Bold**
-
-> BlockQuote
->
-> another line
-
----
-New Line
-
-[Example Website](https://www.example.com)
-
-![Image](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Beethoven.jpg/800px-Beethoven.jpg)
-
----
-Additional stuff added from VSCode!
-
-Here's a Table:
-
-| Header 1 | Header 2 |
+| Date | Update content |
 | --- | --- |
-| R1C1 | R2C2 |
+| 25 Dec 2021 | Started project |
+| 08 Jan 2022 | Finished up version without Javascript|
+```
+## Sites available:
+[Index/Splash](https://FestiveCat.github.io/)
+[About-Me](https://FestiveCat.github.io/aboutMe.html)
+[Skills-&-Experience](https://FestiveCat.github.io/skills.html)
+[Projects-&-Awards](https://FestiveCat.github.io/projects.html)
+[Contact-Me](https://FestiveCat.github.io/.contact.html)
