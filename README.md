@@ -6,6 +6,7 @@
 | 25 Dec 2021 | Started project |
 | 08 Jan 2022 | Finished up version without Javascript |
 | 06 Feb 2022 | Finished up version with Javascript, minus contact me form |
+| 07 Feb 2022 | Added emailjs for contact me form |
 ```
 ## Sites available:
 [Index/Splash](https://FestiveCat.github.io/)
