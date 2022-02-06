@@ -49,7 +49,7 @@
         </div>
 
         <div class="main" id="about-me">  
-        <script src="scripts/aboutMe.js" defer></script>
+        <script src="../scripts/aboutMe.js" defer></script>
             <div class="content-header">
                 <span>A</span><!--
              --><span>b</span><!--
@@ -62,7 +62,7 @@
             </div>
             <div class="content">
                 <div class="content-right-side" id="about-me-splash">
-                    <img src="../images/graph-paper-blue-black-grid-1920x1080-c2-000000-4682b4-l2-12-252-a-0-f-20.png" alt="Splash Image for HY" id="about-me-splash-image">
+                    <img src="" id="about-me-splash-image">
                 </div>
                 <div class="content-left-side" id="about-me-left-side">
                     <div id="about-me-content">
@@ -79,19 +79,23 @@
                     </div>
                     <br>
                     <div id="timeline-obj-container">
-                        <div id="timeline-obj">INSERT TIMELINE HERE
-                            what if this content is too long to be shown in the screen/
-                            seems like i need more details so let me test it right herea nd now
+                        <div id="timeline-obj">
+                            <div class="event" class="timeline-item">
+                                <input type="radio" name="timeline-item-select" value="nus-y1" onclick="nus1()"
+                                        class="timeline-item-check" id="timeline-nus-y1">
+                                <div class="timeline-item-desc-bot">NUS Y1</div>
+                            </div>
+                            <div class="event" class="timeline-item">
+                                <input type="radio" name="timeline-item-select" value="nus-y2" onclick="nus2()"
+                                        class="timeline-item-check" id="timeline-nus-y2">
+                                <div class="timeline-item-desc-top">NUS Y2</div>
+                            </div>
                         </div>
                     </div>
                     <br>
                     <div class="infobox" id="timeline-details">
-                        <div class="infobox-header" id="timeline-details-header">header</div>
-                        <p class="infobox-content" id="timeline-details-content">
-                            In xxxx, I enrolled into the National University of Singapore, into the School of Computing
-                            <br><br><br>
-                            test
-                        </p>
+                        <div class="infobox-header" id="timeline-details-header"></div>
+                        <div class="infobox-content" id="timeline-details-content"></div>
                     </div>
                 </div>
                 
