@@ -3,8 +3,6 @@ function onSubmit(token) {
     document.getElementById("demo-form").submit();
 }
 function submitForm() {
-
-    emailjs.sendForm('contact_service', 'contact_form', this)
     emailjs.send("service_ul78njc","template_u7xraid",{
         subject: document.forms["form"]["form-subject"],
         from_name: document.forms["form"]["form-name"],
