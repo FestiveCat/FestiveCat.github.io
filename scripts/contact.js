@@ -1,7 +1,3 @@
-function onSubmit(token) {
-    document.getElementById("demo-form").submit();
-}
-
 window.onload = function() {
     document.getElementById('form').addEventListener('submit', function(event) {
         event.preventDefault();
