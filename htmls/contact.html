@@ -8,6 +8,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../style.css">
         <title>Han Yang's Website</title>
+        <script src="https://www.google.com/recaptcha/api.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function() {
+            emailjs.init("user_zurxki9MZGVRr5NPAAE5p");
+            })();
+        </script>
     </head>
 
     <body>
@@ -49,7 +56,7 @@
         </div>
 
         <div class="main" id="contact-me">
-            <script src="scripts/contact.js" defer></script>  
+            <script src="../scripts/contact.js" defer></script>  
             <div class="content-header">
                 <span>C</span><!--
              --><span>o</span><!--
@@ -71,12 +78,15 @@
                             (The form is not working yet)
                         </p>
                     </div>                    
-                    <form id="form">
+                    <form id="form" onsubmit="submitForm()">
                         <input type="text" id="form-name" placeholder="Name">
                         <input type="email" id="form-email" placeholder="Email">
                         <input type="text" id="form-subject" placeholder="Subject">
                         <textarea id="form-contents" placeholder="Message"></textarea>
-                        <input type="submit" id="form-submit"; return false">
+                        <input type="submit" id="form-submit" class="g-recaptcha" 
+                        data-sitekey="6LcSjF8eAAAAAPB8GYb6okGmJXdxoi9BGRAYzv0p" 
+                        data-callback='onSubmit' 
+                        data-action='submit'>
                     </form>
                     <div id="socials">
                         <a href="https://www.linkedin.com/in/onghanyang/" target="_blank">
