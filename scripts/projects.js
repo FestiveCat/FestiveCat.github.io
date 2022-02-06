@@ -29,7 +29,7 @@ function orbital() {
             + "Unity, C#, Git\r\n"
             + "Together with a teammate, I worked on a prototype of a game on "
             + "Unity. In particular, we were emulating the indie game 'Divinity: "
-            + "Original Sin 2' and was fairly successful in implementing most of "
+            + "Original Sin 2' and were fairly successful in implementing most of "
             + "the core features.\r\n\r\nWe mostly made use of Unity Collaborate "
             + "instead of GitHub, as using both together tended to cause errors on our end."
             + "\r\n\r\n"
