@@ -51,15 +51,88 @@
     from {margin-left: 100%; opacity: 0%;};
     to {margin-left: 0px; opacity: 100%;};
 }
-@keyframes rotate {
+@keyframes rotateFace1 {
     0% {
-  transform: rotateZ(25deg) rotateX(20deg) rotateY(0deg);
+  transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
     }
-    50% {
-  transform: rotateZ(-25deg) rotateX(-20deg) rotateY(180deg);
+    33% {
+  transform: rotateZ(-50deg) rotateX(-50deg) rotateY(120deg);
+    }
+    66% {
+        transform: rotateZ(50deg) rotateX(50deg) rotateY(240deg);
     }
     100% {
-  transform: rotateZ(25deg) rotateX(20deg) rotateY(360deg);
+  transform: rotateZ(0deg) rotateX(0deg) rotateY(360deg);
+    }
+}
+@keyframes rotateFace2 {
+    0% {
+  transform: rotateZ(0deg) rotateX(0deg) rotateY(270deg);
+    }
+    33% {
+  transform: rotateZ(-50deg) rotateX(-50deg) rotateY(30deg);
+    }
+    66% {
+        transform: rotateZ(50deg) rotateX(50deg) rotateY(150deg);
+    }
+    100% {
+  transform: rotateZ(0deg) rotateX(0deg) rotateY(270deg);
+    }
+}
+@keyframes rotateFace3 {
+    0% {
+  transform: rotateZ(0deg) rotateX(0deg) rotateY(90deg);
+    }
+    33% {
+  transform: rotateZ(-50deg) rotateX(-50deg) rotateY(-150deg);
+    }
+    66% {
+        transform: rotateZ(50deg) rotateX(50deg) rotateY(-30deg);
+    }
+    100% {
+  transform: rotateZ(0deg) rotateX(0deg) rotateY(90deg);
+    }
+}
+@keyframes rotateFace4 {
+    0% {
+  transform: rotateZ(0deg) rotateX(90deg) rotateY(0deg);
+    }
+    33% {
+  transform: rotateZ(-50deg) rotateX(40deg) rotateY(120deg);
+    }
+    66% {
+        transform: rotateZ(50deg) rotateX(130deg) rotateY(240deg);
+    }
+    100% {
+  transform: rotateZ(0deg) rotateX(90deg) rotateY(360deg);
+    }
+}
+@keyframes rotateFace5 {
+    0% {
+  transform: rotateZ(0deg) rotateX(270deg) rotateY(0deg);
+    }
+    33% {
+  transform: rotateZ(-50deg) rotateX(220deg) rotateY(120deg);
+    }
+    66% {
+        transform: rotateZ(50deg) rotateX(320deg) rotateY(240deg);
+    }
+    100% {
+  transform: rotateZ(0deg) rotateX(0deg) rotateY(360deg);
+    }
+}
+@keyframes rotateFace6 {
+    0% {
+  transform: rotateZ(180deg) rotateX(180deg) rotateY(0deg);
+    }
+    33% {
+  transform: rotateZ(130deg) rotateX(130deg) rotateY(120deg);
+    }
+    66% {
+        transform: rotateZ(230deg) rotateX(230deg) rotateY(240deg);
+    }
+    100% {
+  transform: rotateZ(0deg) rotateX(0deg) rotateY(360deg);
     }
 }
 
@@ -178,6 +251,7 @@ div.main {
     left: var(--sidebarWidth);
     height: 100%;
     width: min(95%, calc(100% - 50px));
+    overflow: hidden;
 }
 
 /* ========== ========== INDEX.HTML ========== ========== */
@@ -187,7 +261,6 @@ div.main {
     left: max(7.5%, 50px);
     animation: slide-in-top 0.5s;
 }
-
 
 div.splash-texts > span {
     font-size: max(4vh, 10px);
@@ -208,16 +281,171 @@ div.splash-texts > span.splash-text-name:hover {
     color: var(--colorLavender);
 }
 
-#splash-image {
-    display: block;
-    position: fixed;
-    top: 15%;
-    left: 60%;
-    height: 55.55vh;
+#splash-3D {
+    float: right;
+    position: absolute;
+    top: 25vh;
+    left: 52.5%;
     animation: slide-in-right 0.5s;
+    /* background: #CFCFCF; */
+    width: 400px;
+    height: 400px;
+    perspective: 1000vmin;
+    
+    transform-style: preserve-3d;
+    
+    /* animation: rotate 20s infinite linear; */
+    
 }
-#splash-image:hover {
-    filter: hue-rotate(180deg);
+#splash-3D > div {
+    transform-style: preserve-3d;
+}
+ 
+.cuboid {
+    transform-style: preserve-3d;
+    position: absolute;
+}
+.splash-H div {
+    background: rgba(68, 157, 209, 0.75);
+}
+.splash-H .vertical-face {
+    width: 70px;
+    height: 400px;
+    position: absolute;
+}
+.splash-H div.vertical-face:nth-child(1) {
+    transform: translateZ(35px);
+}
+.splash-H div.vertical-face:nth-child(2) {
+    transform: translateX(35px) rotateY(90deg);
+}
+.splash-H div.vertical-face:nth-child(3) {
+    transform: translateX(-35px) rotateY(-90deg);
+}
+.splash-H div.vertical-face:nth-child(4) {
+    transform: translateZ(-35px) rotateY(180deg);
+}
+.base-face {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: rgba(18, 50, 68, 0.75);
+}
+.splash-H div.base-face:nth-child(5) {
+    transform: translateY(365px) rotateX(-90deg);
+}
+.splash-H div.base-face:nth-child(6) {
+    transform: translateY(-35px) rotateX(90deg);
+}
+
+.splash-H .cuboid:nth-child(2) {
+    left: 150px;
+}
+.splash-H .cuboid:nth-child(3) {
+    transform: rotateZ(90deg);
+    top: 150px;
+    left: 150px;
+}
+.splash-H .cuboid:nth-child(3) > div.vertical-face {
+    width: 70px;
+    height: 80px;
+}
+.splash-Y {
+    position: relative;
+    left: 250px;
+}
+.splash-Y div {
+    background: rgba(176, 132, 204, 0.75);
+}
+.splash-Y .cuboid {
+    transform-style: preserve-3d;
+}
+.splash-Y .vertical-face {
+    width: 70px;
+    height: 200px;
+    position: absolute;
+    top: 200px;
+    left: 75px;
+}
+.splash-Y div.vertical-face:nth-child(1) {
+    transform: translateZ(35px);
+}
+.splash-Y div.vertical-face:nth-child(2) {
+    transform: translateX(35px) rotateY(90deg);
+}
+.splash-Y div.vertical-face:nth-child(3) {
+    transform: translateX(-35px) rotateY(-90deg);
+}
+.splash-Y div.vertical-face:nth-child(4) {
+    transform: translateZ(-35px) rotateY(180deg);
+}
+.splash-Y div.cuboid div.base-face:nth-child(5) {
+    left: 75px;
+    transform: translateY(365px) rotateX(-90deg);
+}
+.skewed-cuboid {
+    transform-style: preserve-3d;
+    position: absolute;
+}
+
+.splash-Y > div.skewed-cuboid > div.skewed-face {
+    width: 70px;
+    height: 200px;
+    position: absolute;
+    left: 75px;
+}
+
+#Y-left-slant > div.skewed-face:nth-child(1) { /* front slant */
+    transform: translateZ(35px) skewX(20deg);
+    left: 38px;
+}
+#Y-left-slant > div.skewed-face:nth-child(2) { /* back slant */
+    transform: translateZ(-35px) skewX(20deg);
+    left: 38px;
+}
+#Y-left-slant > div.skewed-face:nth-child(3) { /* external slant */
+    transform: rotateY(90deg) rotateX(20deg);
+    height: 214px;
+    top: -7px;
+    left: 3px;
+}
+#Y-left-slant > div.skewed-face:nth-child(4) { /* internal slant */
+    transform: rotateY(90deg) rotateX(20deg);
+    height: 212px;
+    top: -6px;
+    left: 73px;
+}
+#Y-left-slant > div.base-face:nth-child(5) {
+    top: -35px;
+    left: 2px;
+    transform: rotateX(90deg);
+}
+
+
+#Y-right-slant > div.skewed-face:nth-child(1) { /* front slant */
+    transform: translateZ(35px) skewX(-20deg);
+    left: 111px;
+}
+#Y-right-slant > div.skewed-face:nth-child(2) { /* back slant */
+    transform: translateZ(-35px) skewX(-20deg);
+    left: 111px;
+}
+#Y-right-slant > div.skewed-face:nth-child(3) { /* internal slant */
+    transform: rotateY(90deg) rotateX(-20deg);
+    height: 212px;
+    top: -6px;
+    left: 77px;
+}
+#Y-right-slant > div.skewed-face:nth-child(4) { /* external slant */
+    transform: rotateY(90deg) rotateX(-20deg);
+    height: 214px;
+    top: -7px;
+    left: 146px;
+}
+#Y-right-slant > div.base-face:nth-child(5) {
+    top: -35px;
+    left: 147px;
+    transform: rotateX(90deg);
 }
 
 .contact-me-button {
@@ -277,7 +505,8 @@ div.splash-texts > span.splash-text-name:hover {
     width: 50%;
 }
 /*========== INFOBOXES ========== */
-/* An infobox is defined as: a div, containing a div.infobox-header and a p.infobox-content*/
+/* An infobox is defined as: a div, containing a div.infobox-header and a div.infobox-content*/
+/* the div.infobox-content can contain up to 2 <p> children. */
 div.infobox {
     background: var(--colorSmokey);
 }
@@ -285,14 +514,24 @@ div.infobox div.infobox-header {
     border: solid #CFCFCF 2px;
     padding: 0.25% 0.5%;
     font-size: 1.5em;
+    white-space: pre-line;
 }
 
-div.infobox p.infobox-content {
+div.infobox div.infobox-content {
     border: solid #CFCFCF 2px;
     padding: 0.1% 0.5%;
+    white-space: pre-line;
+}
+
+div.infobox-content > p:nth-child(1) {
+    width: 27.5%;
+}
+
+div.infobox-content > p:nth-child(2) {
+    width: 72.5%;
 }
 /*========== INFOBARS ========== */
-/* An infobar is defined as a scrollable */
+/* An infobar is defined as a scrollable container with multiple div.infobar-items in it*/
 .infobar-container {
     width: 100%;
     background: #191516;
@@ -344,7 +583,7 @@ div.infobar-item:hover div.infobar-selected {
     position: fixed;
     top: 15vh;
     left: 55%;
-    display: flex;
+    display: none;
     float: right;
     /* background: var(--colorSmokey); */
     width: 42.5%; 
@@ -374,30 +613,65 @@ div.infobar-item:hover div.infobar-selected {
 #timeline-obj-container {
     background: var(--colorSmokey);
     height: 10vh;
-    padding: 0.25% 0.5%;
     display: flex;
     align-items: center;
     justify-content: center;
     animation: slide-in-left 0.5s;
 }
+#timeline-obj-container:hover {
+    height: calc(10vh + 17px);
+}
 
 #timeline-obj {
-    height: 75%;
+    height: 10vh;
     width: 200%;
-    background: #B084CC;
-    text-align: center;
-    text-justify: center;
     overflow-y: hidden;
     overflow-x: hidden;
     white-space: nowrap;
+    /* background: #000; */
+    background-image: url("images/timeline_line.png");
+    background-repeat: repeat-x;
+    background-size: 10vh;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding-left: 5vh;
 }
 #timeline-obj:hover {
-    padding-bottom: 17px;
+    height: calc(10vh + 17px);
     overflow-x: scroll;
 }
-
+.timeline-item {
+    height: 100%;
+    width: 100px;
+    background: #B084CC;
+}
+div[class^="timeline-item-desc-"] {
+    display:inline-block;
+    height: auto;
+    width: auto;
+    padding: 0 1vh;
+    background: var(--colorLBlue);
+    position: relative;
+    left: -45px;
+    border:#CFCFCF solid 2px;
+    border-radius: 100px;
+}
+div.timeline-item-desc-top {
+    top: -3.25vh;
+}
+div.timeline-item-desc-bot {
+    top: 2.5vh;
+}
+#timeline-obj input[type=radio] {
+    border: 0px;
+    width: 1.5em;
+    height: 1.5em;
+    margin-top: 10px;
+}
 #timeline-details {
     animation: slide-in-bot 0.5s;
+    display: none;
 }
 
 
@@ -433,6 +707,11 @@ div[id=skills-bar] div.infobar-item {
 #skills-desc {
     background: var(--colorSmokey);
     animation: slide-in-bot 0.5s;
+    display: none;
+}
+#skills-desc-content {
+    display: flex;
+    flex-direction: row;
 }
 
 #skills-polyhedron {
@@ -460,7 +739,7 @@ div[id=skills-bar] div.infobar-item {
     height: 80vmin;
     transform-origin: center;
     
-    animation: rotate 20s infinite linear;
+    animation: rotateFace1 25s infinite linear;
 }
 .face {
     width: 40vmin;
@@ -497,7 +776,9 @@ div[id=skills-bar] div.infobar-item {
     transform: translateZ(-20vmin) rotateY(180deg);
 }
 /* ========= ========= PROJECTS.HTML ========== ========= */
-
+#projs-left-side {
+    width: 50%;
+}
 #projs-bar-container {
     position: sticky;
     top: 0;
@@ -517,9 +798,13 @@ div[id=projs-bar] div.infobar-item {
     text-align: center;
     animation: slide-in-left 0.5s;
 }
-
+#projs-desc-content {
+    display: flex;
+    flex-direction: row;
+}
 #projs-desc {
     animation: slide-in-bot 0.5s;
+    display: none;
 }
 
 #hex-grid {
@@ -639,12 +924,7 @@ div[id=projs-bar] div.infobar-item {
         margin-right: 50px;
     }
 }
-@media (max-width: 749px) and (min-width: 500px) {/* 2 2 alterating */
-    .hex-container:nth-child(4n+3) {
-        margin-left: 50px;
-    }
-}
-@media (max-width: 499px) {
+@media (max-width: 749px) { /* Hide hex */
     #hex-grid {
         display: none;
     }
@@ -655,6 +935,7 @@ div[id=projs-bar] div.infobar-item {
         display: block;
     }
 }
+
 #hex-orbital {
     background: rgb(5, 0, 49);
 }
@@ -730,7 +1011,7 @@ div[id=projs-bar] div.infobar-item {
 
 /* ========== ========== TALL THIN SCREEN SUPPORT (MOBILE) ========== ========== */
 @media (max-aspect-ratio: 5/3) {
-    #splash-image { /* index.html splash*/
+    #splash-3D { /* index.html splash*/
         display: none;
     }
     #about-me-splash { /* aboutMe.html splash*/

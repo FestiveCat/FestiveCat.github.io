@@ -48,7 +48,8 @@
             </div>
         </div>
 
-        <div class="main" id="projects-and-awards">  
+        <div class="main" id="projects-and-awards">
+        <script src="../scripts/projects.js" defer></script>
             <div class="content-header">
                 <span>P</span><!--
              --><span>r</span><!--
@@ -74,7 +75,8 @@
                         <div class="hex">
                             <div class="hex-int-1">
                                 <div class="hex-int-2" id="hex-compute-think">
-                                    <a href="#"><img src="../images/icons/Compute Think.jpg" alt="Compute Think"></a>
+                                    <a href="#"><img src="../images/icons/Compute Think.jpg" 
+                                            alt="Compute Think" onclick="computeThink()"></a>
                                     <div class="hex-selected"></div>
                                 </div>
                             </div>
@@ -84,7 +86,8 @@
                         <div class="hex">
                             <div class="hex-int-1">
                                 <div class="hex-int-2" id="hex-orbital">
-                                    <a href="#"><img src="../images/icons/Orbital.png" alt="CP2106 Orbital"></a>
+                                    <a href="#"><img src="../images/icons/Orbital.png" 
+                                            alt="CP2106 Orbital" onclick="orbital()"></a>
                                     <div class="hex-selected"></div>
                                 </div>
                             </div>
@@ -96,22 +99,26 @@
                         <div class="infobar" id="projs-bar">
                             <div class="infobar-item" id="compute-think">
                                 <div class="infobar-selected"></div>
-                                <a href="#"><img src="../images/icons/Compute Think.jpg" alt="Compute Think"></a>
+                                <a href="#"><img src="../images/icons/Compute Think.jpg" 
+                                        alt="Compute Think" onclick="computeThink()"></a>
                             </div>
                             <div class="infobar-item" id="orbital">
                                 <div class="infobar-selected"></div>
-                                <a href="#"><img src="../images/icons/Orbital.png" alt="CP2106 Orbital"></a>
+                                <a href="#"><img src="../images/icons/Orbital.png" 
+                                    alt="CP2106 Orbital" onclick="orbital()"></a>
                             </div>
                         </div>
                     </div>
                     <br class="infobar-spacer">
                     <div class="infobox" id="projs-desc">
                         <div class="infobox-header" id="projs-desc-header">Compute Think</div>
-                        <p class="infobox-content" id="projs-desc-content">
-                            Taught class
-                            <br><br>
-                            test
-                        </p>
+                        <div class="infobox-content" id="projs-desc-content">
+                            <p id="projs-desc-content-left"><b>Date/Duration:</b>
+                                <b>Technologies used:</b>
+                                <b>Brief description:</b>
+                            </p>
+                            <p id="projs-desc-content-right"></p>
+                        </div>
                     </div>
                 </div>
             </div>  
