@@ -1,8 +1,8 @@
 window.onload = function() {
     document.getElementById('form').addEventListener('submit', function(event) {
+        event.preventDefault();
         var valid = validateForm();
         if (!valid) return;
-        event.preventDefault();
         // these IDs from the previous steps
         emailjs.send("service_ul78njc","template_u7xraid",{
             subject: document.forms["form"]["form-subject"].value,
