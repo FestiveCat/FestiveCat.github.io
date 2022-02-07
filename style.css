@@ -284,8 +284,8 @@ div.splash-texts > span.splash-text-name:hover {
 #splash-3D {
     float: right;
     position: absolute;
-    top: 25vh;
-    left: 52.5%;
+    top: 50vh;
+    left: 60vw;
     animation: slide-in-right 0.5s;
     /* background: #CFCFCF; */
     width: 400px;
@@ -293,6 +293,7 @@ div.splash-texts > span.splash-text-name:hover {
     perspective: 1000vmin;
     
     transform-style: preserve-3d;
+    transform: translate(-50%, -50%);
     
     /* animation: rotate 20s infinite linear; */
     

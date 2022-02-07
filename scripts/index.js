@@ -25,7 +25,7 @@ function pointerCheck() {
     let diffY = (splashCenter[1] - mouseY) * 1.5 / scaleHeight;
     let rotY = Math.tan(diffX / (0.625*idealWidth)) * -180 / Math.PI;
     let rotX = Math.tan(diffY / (0.625*idealWidth)) * 180 / Math.PI;
-    let rotString = "perspective(400px) rotateX(" + rotX + "deg) rotateY(" + rotY + "deg)";
+    let rotString = "translate(-50%, -50%) perspective(400px) rotateX(" + rotX + "deg) rotateY(" + rotY + "deg)";
     splash.style.transform = rotString + scaleString;
 }
 
