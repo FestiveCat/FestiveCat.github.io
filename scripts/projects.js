@@ -8,7 +8,7 @@ function showDetails() {
 
 function computeThink() {
     showDetails();
-    projDetailsHeader.textContent = "Compute Think";
+    projDetailsHeader.textContent = "Compute{Think}";
     projDetailsDesc.innerHTML = 
               "May - June 2021\r\n"
             + "Java, IntelliJ, Zoom, Google Drive\r\n"
