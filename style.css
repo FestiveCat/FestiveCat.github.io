@@ -934,6 +934,10 @@ div[id=projs-bar] div.infobar-item {
 #hex-orbital {
     background: rgb(5, 0, 49);
 }
+
+#hex-cs2103t-ip {
+    background: rgb(68, 58, 0);
+}
 /* ========== ========== CONTACT.HTML ========== ==========*/
 #contact-me-text-container {
     width: 95%;

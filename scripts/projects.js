@@ -39,3 +39,26 @@ function orbital() {
             + "<a href=\"https://github.com/Cyolune/Caves-and-Lizards\""
             + "style=\"color: #08e2ff\" target=\"_blank\">Github repo</a>";
 }
+
+function cs2103ip() {
+  showDetails();
+  projDetailsHeader.textContent = "CP2103T Software Engineering - Individual Project";
+  projDetailsDesc.innerHTML = 
+            "Jan - Feb 2022\r\n"
+          + "Java, JavaFX, IntelliJ, Gradle\r\n"
+          + "As part of the module, we were asked to make a task manager chatbot.\r\n\r\n"
+          + "I went beyond the expectations, by designing and implementing the system in an "
+          + "extendible way. I also ensured to include Javadoc Documentations for every piece "
+          + "of code, as well as to make a UML Class Diagram to show how my classes are interlinked."
+          + "\r\n\r\n"
+          + "The .jar file is also available for download in the github repo."
+          + "\r\n\r\n"
+          + "<a href=\"cs2103ip.html\""
+          + "style=\"color: #08e2ff\" target=\"_blank\">UML Diagram</a>"
+          + "\r\n\r\n"
+          + "<a href=\"https://github.com/FestiveCat/ip\""
+          + "style=\"color: #08e2ff\" target=\"_blank\">Github repo</a>"
+          + "\r\n\r\n"
+          + "<a href=\"https://FestiveCat.github.io/ip/\""
+          + "style=\"color: #08e2ff\" target=\"_blank\">User Guide</a>";
+}
