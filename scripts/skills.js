@@ -15,9 +15,10 @@ function java() { // face 1
     skillsDetailsHeader.textContent = "Java";
     skillsDetailsDesc.innerHTML = 
               "January 2021\r\n"
-            + "~6,000\r\n"
+            + "~10,000\r\n"
             + "Mainly school projects\r\n"
-            + "Decent, know about Streams, Lambdas, Exceptions, MultiThreading, etc";
+            + "Decent, know about Basic Functional Libraries as well as SWE libraries "
+            + "like JavaFX and JUnit as well as integration with Gradle, etc";
 }
 function python() { // face 2
     cube.style.animation = "none";
@@ -27,8 +28,8 @@ function python() { // face 2
     skillsDetailsHeader.textContent = "Python";
     skillsDetailsDesc.innerHTML = 
               "November 2020\r\n"
-            + "~500\r\n"
-            + "Mainly personal Projects and some school projects\r\n"
+            + "~2500\r\n"
+            + "Personal projects and school projects\r\n"
             + "Basic programming features. Have not touched on libaries much.";
 }
 function cCpp() {
@@ -38,7 +39,7 @@ function cCpp() {
               "August 2021\r\n"
             + ">500\r\n"
             + "Mainly school projects\r\n"
-            + "Basic programming features + malloc/free. Mostly in C.";
+            + "Basic programming features + malloc/free.";
 }
 function html5() { // face 3
     cube.style.animation = "none";
@@ -50,7 +51,8 @@ function html5() { // face 3
               "December 2021\r\n"
             + "~1,200\r\n"
             + "Mainly personal Projects\r\n"
-            + "Decent";
+            + "Basics only. Have not been keeping up since Feb 2022, but the extensible design "
+            + "allowed me to continually update my website without much coding.";
 
 }
 function css3() { // face 4
@@ -63,7 +65,7 @@ function css3() { // face 4
               "December 2021\r\n"
             + "~1,200\r\n"
             + "Mainly personal Projects\r\n"
-            + "Decent, know about flex, grids, animations, transform etc";
+            + "Decent, know about flex, grids, animations, transform etc. Have not been keeping up since Feb 2022. See HTML.";
 
 }
 function js() { // face 5
@@ -76,7 +78,7 @@ function js() { // face 5
               "January 2022\r\n"
             + "~500\r\n"
             + "Mainly personal Projects\r\n"
-            + "Basic programming features, linking to HTML documents and simple scripting.";
+            + "Basic programming features, linking to HTML documents and simple scripting. Have not been keeping up since Feb 2022. See HTML.";
 
 }
 function git() {
@@ -97,7 +99,7 @@ function teaching() { // face 6
     skillsDetailsHeader.textContent = "Teaching";
     skillsDetailsDesc.innerHTML = 
               "2018\r\n"
-            + "NA. Estimated no. of students taught: 200\r\n"
+            + "NA. Estimated no. of students taught: 250\r\n"
             + "In school and out of school.\r\n"
             + "Experienced. Know about learning styles, spaced repetition, designing slides, "
             + "communicating complex information using analogies or layman terms.";
